@@ -24,6 +24,7 @@ app.use(bodyParser.json({ limit: "50mb" }));
 
 (async () => {
   try {
+    console.log('db connection')
     await db.sequelize.sync();
   } catch (error) {
     console.log(error)
