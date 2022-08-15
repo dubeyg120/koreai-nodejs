@@ -1,5 +1,5 @@
-// require("dotenv").config({ path: ".env" });
-console.log(process.env)
+require("dotenv").config({ path: ".env" });
+// console.log(process.env)
 var express = require("express");
 const path = require("path");
 global.appRoot = path.resolve(__dirname);
@@ -56,7 +56,7 @@ app.use(function (req, res, next) {
   // Pass to next layer of middleware
   next();
 });
-app.use("/", (req, res) => {
+app.use("/check", (req, res) => {
   console.log('app running')
   return res.status(200).json({
     success : true,
