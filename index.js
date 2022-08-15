@@ -1,5 +1,5 @@
-require("dotenv").config({ path: ".env" });
-
+// require("dotenv").config({ path: ".env" });
+console.log(process.env)
 var express = require("express");
 const path = require("path");
 global.appRoot = path.resolve(__dirname);
