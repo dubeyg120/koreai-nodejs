@@ -55,7 +55,13 @@ app.use(function (req, res, next) {
   // Pass to next layer of middleware
   next();
 });
-
+app.use("/", (req, res) => {
+  console.log('app running')
+  return res.status(200).json({
+    success : true,
+    message : "Welcome"
+  })
+})
 app.use("/v1", require(_pathconst.FilesPath.Router)); 
 
 app.use((err, req, res, next) => {
